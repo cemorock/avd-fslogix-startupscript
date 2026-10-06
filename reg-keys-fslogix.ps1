@@ -16,7 +16,7 @@ try {
     }
 
     # Entra Kerberos for Azure Files
-    Set-Reg 'HKLM:\Software\Policies\Microsoft\Kerberos\Parameters' 'CloudKerberosTicketRetrievalEnabled' 1
+    Set-Reg 'HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Parameters' 'CloudKerberosTicketRetrievalEnabled' 1
     Set-Reg 'HKLM:\Software\Policies\Microsoft\AzureADAccount'      'LoadCredKeyFromProfile'              1
 
     # FSLogix profile container
