@@ -5,8 +5,8 @@ function Log($m) { "$(Get-Date -Format o) $m" | Out-File $log -Append -Encoding 
 try {
     Log "Start, running as $(whoami)"
 
-    $StorageAccount = 'saavdprodspcs'
-    $ShareName      = 'cfs-avd-prod-spcs'
+    $StorageAccount = 'saavdpspcs'
+    $ShareName      = 'cfs-avd-p-spcs'
     $VhdPath        = "\\$StorageAccount.file.core.windows.net\$ShareName"
 
     function Set-Reg($Path, $Name, $Value, $Type = 'DWord') {
