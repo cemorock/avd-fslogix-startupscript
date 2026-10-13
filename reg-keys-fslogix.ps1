@@ -28,6 +28,13 @@ try {
     Set-Reg $fs 'DeleteLocalProfileWhenVHDShouldApply' 1
     Set-Reg $fs 'FlipFlopProfileDirectoryName'         1
 
+    # Time settings
+    Set-TimeZone -Id "W. Europe Standard Time"
+    Set-WinSystemLocale de-CH
+    Set-WinHomeLocation -GeoId 223
+    Set-Culture de-CH
+    Copy-UserInternationalSettingsToSystem -WelcomeScreen $true -NewUser $true
+
     if (-not (Get-Service frxsvc -ErrorAction SilentlyContinue)) {
         Log 'WARNING: FSLogix service (frxsvc) not found - agent not installed'
     }
